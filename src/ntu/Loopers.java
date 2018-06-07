@@ -41,7 +41,70 @@ public class Loopers {
 	}
 	public static void main(String[] args) {
 		//printSquareBoard(9,true);
-		computeTable(30);
+		//computeTable(30);
+		/*printPatternA(9);		
+		printPatternB(9);
+		printPatternC(9);*/
+		printPatternE(9);
+		printPatternF(9);
 	}
-
+	static void printPatternA(int x) {
+		for(int row = 1; row <= x; ++row) {
+			for(int j = 0; j < row; ++j) {
+				System.out.print("# ");
+			}
+			System.out.println("");
+		}
+	}
+	static void printPatternB(int x) {
+		for(int row = x; row > 0; --row) {
+			for(int j = 0; j < row; ++j) {
+				System.out.print("# ");
+			}
+			System.out.println("");
+		}
+	}
+	static void printPatternC(int x) {
+		for(int row = x; row > 0; --row) {
+			for(int spaceCount = row; spaceCount < x; ++spaceCount) {
+				System.out.print("  ");
+			}
+			for(int starCount = 0; starCount < row; ++starCount) {
+				System.out.print("# ");
+			}
+			System.out.println("");
+		}
+	}
+	static void printPatternD(int x) {
+		for(int row = 1; row < x; ++row) {
+			for(int col = 1; col < x; ++col) {
+				if(col >= (x-row)) {
+					System.out.print("# ");
+				} else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println("");
+		}
+	}
+	static void printPatternE(int x) {
+		for(int row = 1; row <= x; ++row) {
+			for(int col = 1; col <= x; ++col) {
+				if(row == 1 || row == x) System.out.print("# ");
+				else if(col == 1 || col == x) System.out.print("# ");
+				else System.out.print("  ");				
+			}
+			System.out.println("");
+		}
+	}
+	static void printPatternF(int x) {
+		for(int row = 1; row <= x; ++row) {
+			for(int col = 1; col <= x; ++col) {
+				if(row == 1 || row == x) System.out.print("# ");
+				else if(col == row) System.out.print("# ");
+				else System.out.print("  ");				
+			}
+			System.out.println("");
+		}
+	}
 }
