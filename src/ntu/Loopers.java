@@ -40,13 +40,16 @@ public class Loopers {
 
 	}
 	public static void main(String[] args) {
-		//printSquareBoard(9,true);
-		//computeTable(30);
-		/*printPatternA(9);		
+		/*printSquareBoard(9,true);
+		computeTable(30);
+		printPatternA(9);		
 		printPatternB(9);
-		printPatternC(9);*/
+		printPatternC(9);
 		printPatternE(9);
-		printPatternF(9);
+		printPatternF(6);
+		printPatternG(4);*/
+		printPatternH(10);
+		printPatternI(10);
 	}
 	static void printPatternA(int x) {
 		for(int row = 1; row <= x; ++row) {
@@ -98,10 +101,47 @@ public class Loopers {
 		}
 	}
 	static void printPatternF(int x) {
+		System.out.println("     (f)   ");
 		for(int row = 1; row <= x; ++row) {
 			for(int col = 1; col <= x; ++col) {
 				if(row == 1 || row == x) System.out.print("# ");
 				else if(col == row) System.out.print("# ");
+				else System.out.print("  ");				
+			}
+			System.out.println("");
+		}
+	}
+	static void printPatternG(int x) {
+		System.out.println("       (g)");
+		for(int row = 1; row <= x; ++row) {
+			for(int col = 1; col <= x; ++col) {
+				if(row == 1 || row == x) System.out.print("# ");
+				else if((x-col) == (row-1)) System.out.print("# ");
+				else System.out.print("  ");				
+			}
+			System.out.println("");
+		}
+	}
+	static void printPatternH(int x) {
+		System.out.println("       (h)");
+		for(int row = 1; row <= x; ++row) {
+			for(int col = 1; col <= x; ++col) {
+				if(row == 1 || row == x) System.out.print("# ");
+				else if((col == row)|| ((x-col) == (row-1))) System.out.print("# ");
+				else System.out.print("  ");				
+			}
+			System.out.println("");
+		}
+	}
+	static void printPatternI(int x) {
+		for(int row = 1; row <= x; ++row) {
+			for(int col = 1; col <= x; ++col) {
+				if(row == 1 || row == x) System.out.print("# ");
+				else if((col == row)
+						|| ((x-col) == (row-1))
+						|| col == 1
+						|| col == x)
+						System.out.print("# ");
 				else System.out.print("  ");				
 			}
 			System.out.println("");
